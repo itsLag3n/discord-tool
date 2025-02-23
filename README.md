@@ -59,7 +59,7 @@ Or just run
 
 ## Support
 
-For support, contact [@lag3n](https://discord.com/channels/@me) on discord or [@lag3n](https://lag3n.t.me) on Telegram.
+For support, contact [@lag3n](https://discord.com/channels/@me) on Discord or [@lag3n](https://lag3n.t.me) on Telegram.
 
 
 ## Disclaimer
