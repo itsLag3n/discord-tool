@@ -6,12 +6,17 @@ Just a simple multi tool for discord
 - Aviable on **Windows**, **Linux** and **MacOS**
 - **Open Source** for all
 
+
 ## Features
 
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
+- ID Lookup
+- Token Lookup
+- ID To Token
+
+
+## Screenshots
+
+![Menu 1](https://raw.githubusercontent.com/itsLag3n/discord-tool/refs/heads/main/assets/menu1.png)
 
 
 ## How to run
@@ -62,6 +67,7 @@ For support, contact [@lag3n](https://discord.com/channels/@me) on discord or [@
 - **Discord Tool** has been developed solely for **educational purposes only**.
 - This project has been created with good intentions and is intended for personal use only.
 - By choosing to use this tool, you acknowledge and accept full responsibility for any consequences that may result from your actions.
+
 
 ## Authors
 
