@@ -145,7 +145,7 @@ class token_lookup:
                 self.creation_date = self.get_creation_date()
 
                 hide_token = Ask("Hide token (y/n)")
-                if hide_token in ["n", "no", "non"]:
+                if hide_token.lower() in ["n", "no", "non", "false"]:
                     hide_token = False
                 else:
                     hide_token = True
@@ -175,5 +175,5 @@ class token_lookup:
 {co}Bio               :{RESET} {self.bio}
 """)
             else:
-                Log(R, "!", "Invalid token", wp=True)
+                Log(R, "x", "Invalid token", wp=True)
                 time.sleep(1.5)

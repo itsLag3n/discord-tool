@@ -23,18 +23,25 @@ banner = f"""
     ─┴┘┴└─┘└─┘└─┘┴└──┴┘     ┴ └─┘└─┘┴─┘{RESET}"""
 
 options1 = f"""
+{co}[{W}>>{co}] {W}Next Page
 {co}[{W}01{co}] {W}User Lookup
 {co}[{W}02{co}] {W}Token Lookup
 {co}[{W}03{co}] {W}ID To Token
 """
 
 options2 = f"""
-
+{co}[{W}<<{co}] {W}Previous Page
+{co}[{W}04{co}] {W}Token Checker
+{co}[{W}05{co}] {W}Multi Token Checker
+{co}[{W}06{co}] {W}Soon
 """
 
-def Menu(page: str = None):
+def Menu(page: int = None):
     print(banner)
-    if page:print(options1 if page == "1" else options2)
+    if page == 1:
+        print(options1)
+    elif page == 2:
+        print(options2)
 
 def Clear():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -52,6 +59,10 @@ def Log(color, symbole, message, end="\n", flush=False, wp=False):
 def FormatLog(color, symbole, message, end="\n", flush=False):
     return f"{RESET}{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} {color}[{W}{symbole}{color}]{W} {message}"
 
+def SleepLog(color, symbole, message, end="\n", flush=False, wp=False, timee=1.5):
+    Log(color, symbole, message, end, flush, wp)
+    time.sleep(timee)
+
 def Ask(text: str):
     return input(f"{co}{text}{W} > {RESET}")
 
@@ -62,5 +73,5 @@ def CommingSoon(wp=True):
 
 def InvalidChoice(wp=True):
     if wp: print("")
-    Log(R, "!", "Invalid Choice")
+    Log(R, "x", "Invalid Choice")
     time.sleep(1.5)
