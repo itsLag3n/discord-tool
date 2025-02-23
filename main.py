@@ -1,26 +1,31 @@
 from src.config.config import *
 
-page = "1"
+page = 1
 options = {
-    1: user_id_lookup().main,
-    2: token_lookup().main,
-    3: id_to_token().main,
-    4: CommingSoon,
-    5: CommingSoon,
-    6: CommingSoon,
-    7: CommingSoon,
-    8: CommingSoon,
-    9: CommingSoon,
+    ">": lambda: next_page(page).main(),
+    "<": lambda: previous_page(page).main(),
+    "1": lambda: user_id_lookup().main(),
+    "2": lambda: token_lookup().main(),
+    "3": lambda: id_to_token().main(),
+    
+    ">>": lambda: next_page(page).main(),
+    "<<": lambda: previous_page(page).main(),
+    "01": lambda: user_id_lookup().main(),
+    "02": lambda: token_lookup().main(),
+    "03": lambda: id_to_token().main(),
 }
 
 def main():
+    global page
     while 1:
         Clear()
         Title("Menu")
         Menu(page)
         choice = Ask("Choice")
         try:
-            options[int(choice)]()
+            result = options[choice]()
+            if isinstance(result, int):
+                page = result
         except:
             InvalidChoice()
 
