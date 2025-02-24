@@ -6,4 +6,4 @@ class next_page:
     def main(self):
         if self.page in [1]:
             self.page += 1
-        return self.page
+        return "page", self.page

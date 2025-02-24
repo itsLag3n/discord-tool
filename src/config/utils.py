@@ -16,32 +16,57 @@ B = "\033[34m"
 O = "\033[33m"
 
 co = O
+page = 1
 
-banner = f"""
+def banner():
+    return f"""
     {co}┌┬┐┬┌─┐┌─┐┌─┐┬─┐┌┬┐    ┌┬┐┌─┐┌─┐┬  
      │││└─┐│  │ │├┬┘ ││     │ │ ││ ││  
     ─┴┘┴└─┘└─┘└─┘┴└──┴┘     ┴ └─┘└─┘┴─┘{RESET}"""
 
-options1 = f"""
+def options1():
+    return f"""
+{co}[{W}!!{co}] {W}Settings
 {co}[{W}>>{co}] {W}Next Page
 {co}[{W}01{co}] {W}User Lookup
 {co}[{W}02{co}] {W}Token Lookup
 {co}[{W}03{co}] {W}ID To Token
 """
 
-options2 = f"""
+def options2():
+    return f"""
+{co}[{W}!!{co}] {W}Settings
 {co}[{W}<<{co}] {W}Previous Page
 {co}[{W}04{co}] {W}Token Checker
 {co}[{W}05{co}] {W}Multi Token Checker
 {co}[{W}06{co}] {W}Token Filter
 """
 
-def Menu(page: int = None):
-    print(banner)
-    if page == 1:
-        print(options1)
+def options_settings():
+    return f"""
+{co}[{W}!!{co}] {W}Exit
+{co}[{W}01{co}] {W}Color
+"""
+
+def options_color():
+    return f"""
+{co}[{W}01{co}] {W}Orange
+{co}[{W}02{co}] {W}Magenta
+{co}[{W}03{co}] {W}Green
+{co}[{W}04{co}] {W}Blue
+{co}[{W}05{co}] {W}Red
+"""
+
+def Menu(page = None):
+    print(banner())
+    if page == "settings":
+        print(options_settings())
+    elif page == "change_color":
+        print(options_color())
+    elif page == 1:
+        print(options1())
     elif page == 2:
-        print(options2)
+        print(options2())
 
 def Clear():
     os.system('cls' if os.name=='nt' else 'clear')
@@ -75,3 +100,7 @@ def InvalidChoice(wp=True):
     if wp: print("")
     Log(R, "x", "Invalid Choice")
     time.sleep(1.5)
+
+def set_color(new_color):
+    global co
+    co = new_color

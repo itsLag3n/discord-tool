@@ -1,7 +1,7 @@
 from src.config.config import *
 
-page = 1
 options = {
+    "!": lambda: settings().main(),
     ">": lambda: next_page(page).main(),
     "<": lambda: previous_page(page).main(),
     "1": lambda: user_id_lookup().main(),
@@ -11,6 +11,7 @@ options = {
     "5": lambda: multi_token_checker().main(),
     "6": lambda: token_filter().main(),
     
+    "!!": lambda: settings().main(),
     ">>": lambda: next_page(page).main(),
     "<<": lambda: previous_page(page).main(),
     "01": lambda: user_id_lookup().main(),
@@ -22,7 +23,7 @@ options = {
 }
 
 def main():
-    global page
+    global page, co
     while 1:
         Clear()
         Title("Menu")
@@ -30,8 +31,11 @@ def main():
         choice = Ask("Choice")
         try:
             result = options[choice]()
-            if isinstance(result, int):
-                page = result
+            if not result: continue
+            if result[0] == "page":
+                page = result[1]
+            elif result[0] == "color":
+                set_color(result[1])
         except:
             InvalidChoice()
 

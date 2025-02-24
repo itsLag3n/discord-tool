@@ -1,5 +1,8 @@
 from src.config.utils import *
 
+from src.config.settings_page import *
+from src.config.settings.change_color import *
+
 from src.config.next_page import *
 from src.config.previous_page import *
 
