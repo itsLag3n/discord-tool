@@ -104,3 +104,6 @@ def InvalidChoice(wp=True):
 def set_color(new_color):
     global co
     co = new_color
+
+def get_co():
+    return co

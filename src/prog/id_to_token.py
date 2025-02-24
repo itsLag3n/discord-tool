@@ -5,6 +5,7 @@ class id_to_token:
     def __init__(self):
         self.user_id = None
         self.first_part_token = None
+        self.co = get_co()
     
     def get_first_part_token(self):
         encodedBytes = base64.b64encode(self.user_id.encode("utf-8"))
@@ -22,4 +23,4 @@ class id_to_token:
         
         Clear()
         Menu()
-        input(f"\n{W}{self.user_id}{co} > First part token:{W} {self.first_part_token}\n")
+        input(f"\n{W}{self.user_id}{self.co} > First part token:{W} {self.first_part_token}\n")

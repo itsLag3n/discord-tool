@@ -25,7 +25,7 @@ class change_color:
 
     def change_color(self, color):
         co = self.colours[color]
-        Log(co, "!", f"color changed to {co}{color}")
+        Log(co, "!", f"color changed to {co}{color}", wp=True)
         return co
 
     def main(self):

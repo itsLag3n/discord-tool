@@ -21,6 +21,7 @@ class token_lookup:
         self.nsfw_allowed = None
         self.bio = None
         self.creation_date = None
+        self.co = get_co()
 
 
     def get_user_id(self):
@@ -151,26 +152,26 @@ class token_lookup:
             Clear()
             Menu()
             input(f"""
-{co}Token             :{RESET} {f"{self.token[:50]}**********************" if hide_token else self.token}
-{co}User ID           :{RESET} {self.user_id}
-{co}Display Name      :{RESET} {self.display_name}
-{co}Username          :{RESET} {self.username}#{self.discriminator}
-{co}Avatar url        :{RESET} {self.avatar_url}
-{co}Banner url        :{RESET} {self.banner_url}
-{co}Banner Color      :{RESET} {self.banner_color}
-{co}Creation Date     :{RESET} {self.creation_date}
+{self.co}Token             :{RESET} {f"{self.token[:50]}**********************" if hide_token else self.token}
+{self.co}User ID           :{RESET} {self.user_id}
+{self.co}Display Name      :{RESET} {self.display_name}
+{self.co}Username          :{RESET} {self.username}#{self.discriminator}
+{self.co}Avatar url        :{RESET} {self.avatar_url}
+{self.co}Banner url        :{RESET} {self.banner_url}
+{self.co}Banner Color      :{RESET} {self.banner_color}
+{self.co}Creation Date     :{RESET} {self.creation_date}
 
-{co}Premium Type      :{RESET} {self.premium_type}
-{co}Language          :{RESET} {self.lang}
+{self.co}Premium Type      :{RESET} {self.premium_type}
+{self.co}Language          :{RESET} {self.lang}
 
-{co}MFA Enabled       :{RESET} {self.mfa_enabled}
+{self.co}MFA Enabled       :{RESET} {self.mfa_enabled}
 
-{co}Email             :{RESET} {self.email}
-{co}Phone             :{RESET} {self.phone}
-{co}Verified          :{RESET} {self.verified}
-{co}NSFW Allowed      :{RESET} {self.nsfw_allowed}
+{self.co}Email             :{RESET} {self.email}
+{self.co}Phone             :{RESET} {self.phone}
+{self.co}Verified          :{RESET} {self.verified}
+{self.co}NSFW Allowed      :{RESET} {self.nsfw_allowed}
 
-{co}Bio               :{RESET} {self.bio}
+{self.co}Bio               :{RESET} {self.bio}
 """)
         else:
             Log(R, "x", "Invalid token", wp=True)

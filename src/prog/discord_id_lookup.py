@@ -12,6 +12,7 @@ class user_id_lookup:
         self.username = None
         self.discriminator = None
         self.creation_date = None
+        self.co = get_co()
     
     def get_avatar_url(self):
         data = self.data
@@ -86,13 +87,13 @@ class user_id_lookup:
             Clear()
             Menu()
             input(f"""
-{co}Avatar url        :{RESET} {self.avatar_url}
-{co}Banner            :{RESET} {self.banner_url}
-{co}Banner Color      :{RESET} {self.banner_color}
-{co}User Id           :{RESET} {self.user_id}
-{co}Display Name      :{RESET} {self.display_name}
-{co}Username          :{RESET} {self.username}#{self.discriminator}
-{co}Created at        :{RESET} {self.creation_date}
+{self.co}Avatar url        :{RESET} {self.avatar_url}
+{self.co}Banner            :{RESET} {self.banner_url}
+{self.co}Banner Color      :{RESET} {self.banner_color}
+{self.co}User Id           :{RESET} {self.user_id}
+{self.co}Display Name      :{RESET} {self.display_name}
+{self.co}Username          :{RESET} {self.username}#{self.discriminator}
+{self.co}Created at        :{RESET} {self.creation_date}
 """)
         else:
             Log(R, "!", "Error while getting user information", wp=True)
