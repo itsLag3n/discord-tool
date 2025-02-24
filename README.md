@@ -12,6 +12,8 @@ Just a simple multi tool for discord
 - ID Lookup
 - Token Lookup
 - ID To Token
+- Token Checker
+- Multi Token Checker
 
 
 ## Screenshots
@@ -21,6 +23,11 @@ Just a simple multi tool for discord
 
 ## How to run
 
+### Just run
+- `start.bat` on **Windows**
+- `start.py` on **Linux/macOS**
+
+### Or follow these steps
 Clone the project
 
 ```bash
@@ -52,9 +59,6 @@ Start the tool
   # Windows
   py main.py
 ```
-Or just run
-- `start.bat` on **Windows**
-- `start.py` on **Linux/macOS**
 
 
 ## Support
@@ -65,7 +69,7 @@ For support, contact [@lag3n](https://discord.com/channels/@me) on Discord or [@
 ## Disclaimer
 
 - **Discord Tool** has been developed solely for **educational purposes only**.
-- This project has been created with good intentions and is intended for personal use only.
+- This project has been created **with good intentions** and is intended for **personal use only**.
 - By choosing to use this tool, you acknowledge and accept full responsibility for any consequences that may result from your actions.
 
 
