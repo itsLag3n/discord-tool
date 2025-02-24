@@ -1,6 +1,6 @@
 from src.config.utils import *
 import os
-import httpx
+import requests
 from concurrent.futures import ThreadPoolExecutor
 
 class multi_token_checker:
@@ -20,14 +20,13 @@ class multi_token_checker:
             headers = {
                 "Authorization": token
             }
-            with httpx.Client() as client:
-                response = client.get(url, headers=headers)
-                if response.status_code == 200:
-                    self.valid += 1
-                    Log(G, "+", f"VALID: {f"{token[:50]}**********************" if self.hide_tokens else token}")
-                else:
-                    self.invalid += 1
-                    Log(R, "x", f"INVALID: {f"{token[:50]}**********************" if self.hide_tokens else token}")
+            response = requests.get(url, headers=headers)
+            if response.status_code == 200:
+                self.valid += 1
+                Log(G, "+", f"VALID: {f"{token[:50]}**********************" if self.hide_tokens else token}")
+            else:
+                self.invalid += 1
+                Log(R, "x", f"INVALID: {f"{token[:50]}**********************" if self.hide_tokens else token}")
         except:
             self.failed += 1
             Log(O, "!", f"FAILED: {f"{token[:50]}**********************" if self.hide_tokens else token}")

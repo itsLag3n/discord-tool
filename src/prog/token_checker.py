@@ -1,5 +1,5 @@
 from src.config.utils import *
-import httpx
+import requests
 
 class token_checker:
     def __init__(self):
@@ -11,8 +11,7 @@ class token_checker:
             headers = {
                 "Authorization": self.token
             }
-            with httpx.Client() as client:
-                response = client.get(url, headers=headers)
+            response = requests.get(url, headers=headers)
             if response.status_code == 200:
                 return True
             else:
