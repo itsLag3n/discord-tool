@@ -8,3 +8,4 @@ from src.prog.token_lookup import *
 from src.prog.id_to_token import *
 from src.prog.token_checker import *
 from src.prog.multi_token_checker import *
+from src.prog.token_filter import *

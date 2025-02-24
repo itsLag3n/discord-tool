@@ -14,6 +14,7 @@ Just a simple multi tool for discord
 - ID To Token
 - Token Checker
 - Multi Token Checker
+- Token Filter
 
 
 ## Screenshots

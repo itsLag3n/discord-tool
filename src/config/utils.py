@@ -33,7 +33,7 @@ options2 = f"""
 {co}[{W}<<{co}] {W}Previous Page
 {co}[{W}04{co}] {W}Token Checker
 {co}[{W}05{co}] {W}Multi Token Checker
-{co}[{W}06{co}] {W}Soon
+{co}[{W}06{co}] {W}Token Filter
 """
 
 def Menu(page: int = None):

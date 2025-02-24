@@ -9,6 +9,7 @@ options = {
     "3": lambda: id_to_token().main(),
     "4": lambda: token_checker().main(),
     "5": lambda: multi_token_checker().main(),
+    "6": lambda: token_filter().main(),
     
     ">>": lambda: next_page(page).main(),
     "<<": lambda: previous_page(page).main(),
@@ -17,6 +18,7 @@ options = {
     "03": lambda: id_to_token().main(),
     "04": lambda: token_checker().main(),
     "05": lambda: multi_token_checker().main(),
+    "06": lambda: token_filter().main(),
 }
 
 def main():
