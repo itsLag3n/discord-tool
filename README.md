@@ -20,6 +20,7 @@ Just a simple multi tool for discord
 ## Screenshots
 
 ![Menu 1](https://raw.githubusercontent.com/itsLag3n/discord-tool/refs/heads/main/assets/menu1.png)
+![Menu 1](https://raw.githubusercontent.com/itsLag3n/discord-tool/refs/heads/main/assets/menu2.png)
 
 
 ## How to run
